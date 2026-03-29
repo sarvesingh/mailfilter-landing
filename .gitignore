@@ -3,6 +3,9 @@
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
+dist/
+build/
 
 # Secrets
 .env
@@ -14,3 +17,10 @@ token.json
 
 # macOS
 .DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

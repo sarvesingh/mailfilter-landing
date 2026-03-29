@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}MailFilter{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <nav class="app-nav">
+    <div class="nav-inner">
+      <a href="/dashboard" class="logo">
+        <span class="logo-leaf"></span>
+        MailFilter
+      </a>
+      <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/dashboard/history">History</a>
+        <a href="/dashboard/optouts">Opt-Outs</a>
+        <a href="/dashboard/impact">Impact</a>
+        <a href="/dashboard/settings">Settings</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
