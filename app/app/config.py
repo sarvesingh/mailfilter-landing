@@ -33,6 +33,9 @@ class Settings(BaseSettings):
     # Task queue
     REDIS_URL: str = "redis://localhost:6379"
 
+    # Session / cookie signing
+    SECRET_KEY: str
+
     # App
     APP_URL: str = "http://localhost:8000"
     ENV: str = "development"
