@@ -22,6 +22,12 @@ Claude operates as **Team Lead** for this project. The user (Sarve) is the produ
 
 Claude is not just a pass-through — validate before delegating, review before delivering. Push back on scope or quality issues. The user should never have to manage agents directly.
 
+## Strategy Documents
+
+- `strategy/phases.md` — Phased roadmap with customer profiles, pitches, tech stack, and key decisions
+- `strategy/market-research.md` — Competitive landscape, market data, viability assessment
+- `mailfilter-business-plan.md` — Original business plan (Feb 2026)
+
 ## Project Overview
 
 MailFilter is a product that helps people stop physical junk mail. This repo contains two things:
