@@ -31,7 +31,7 @@ async def dashboard_index(
     return HTMLResponse(
         content=f"""
         <!DOCTYPE html>
-        <html><head><title>MailFilter Dashboard</title>
+        <html><head><title>SnailSense Dashboard</title>
         <link rel="stylesheet" href="/static/style.css"></head>
         <body style="display:flex;align-items:center;justify-content:center;min-height:100vh;">
         <div class="card" style="text-align:center;padding:3rem;">

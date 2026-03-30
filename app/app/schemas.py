@@ -1,4 +1,4 @@
-"""Pydantic request/response schemas for the MailFilter API."""
+"""Pydantic request/response schemas for the SnailSense API."""
 
 import uuid
 from datetime import date, datetime

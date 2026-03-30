@@ -35,7 +35,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
 
 app = FastAPI(
-    title="MailFilter",
+    title="SnailSense",
     description="Stop physical junk mail. Classify, track, and opt out.",
     version="0.1.0",
     lifespan=lifespan,

@@ -1,4 +1,4 @@
-"""Initial schema — all tables for MailFilter MVP.
+"""Initial schema — all tables for SnailSense MVP.
 
 Revision ID: 0001
 Revises:

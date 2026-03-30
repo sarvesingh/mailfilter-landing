@@ -13,7 +13,7 @@ load_dotenv(POC_DIR / ".env")
 # Paths
 CREDENTIALS_FILE = POC_DIR / "credentials.json"
 TOKEN_FILE = POC_DIR / "token.json"
-LOG_FILE = POC_DIR / "mailfilter.log"
+LOG_FILE = POC_DIR / "snailsense.log"
 
 # API keys / IDs
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")

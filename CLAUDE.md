@@ -26,11 +26,11 @@ Claude is not just a pass-through — validate before delegating, review before 
 
 - `strategy/phases.md` — Phased roadmap with customer profiles, pitches, tech stack, and key decisions
 - `strategy/market-research.md` — Competitive landscape, market data, viability assessment
-- `mailfilter-business-plan.md` — Original business plan (Feb 2026)
+- `snailsense-business-plan.md` — Original business plan (Feb 2026)
 
 ## Project Overview
 
-MailFilter is a product that helps people stop physical junk mail. This repo contains two things:
+SnailSense is a product that helps people stop physical junk mail. This repo contains two things:
 
 1. **Landing page** (`index.html`) — a static single-page marketing site deployed to GitHub Pages via `.github/workflows/pages.yml` on push to `main`.
 2. **POC pipeline** (`poc/`) — a Python automation that reads USPS Informed Delivery emails, classifies mail images as junk/real using Claude's vision API, and logs results to Google Sheets.
@@ -61,7 +61,7 @@ uv run python -m src.main 2026-03-28       # process a specific date
 
 ### Scheduled Execution
 
-`com.mailfilter.poc.plist` is a macOS launchd job that runs the pipeline daily at 5 PM. Load with `launchctl load com.mailfilter.poc.plist`.
+`com.snailsense.poc.plist` is a macOS launchd job that runs the pipeline daily at 5 PM. Load with `launchctl load com.snailsense.poc.plist`.
 
 ### Architecture
 

@@ -1,7 +1,7 @@
 [project]
-name = "mailfilter"
+name = "snailsense"
 version = "0.1.0"
-description = "MailFilter — stop physical junk mail"
+description = "SnailSense — stop physical junk mail"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]",

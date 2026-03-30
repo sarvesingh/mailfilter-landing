@@ -1,8 +1,8 @@
-# MailFilter - Business Plan
+# SnailSense - Business Plan
 
 ## Executive Summary
 
-MailFilter is a consumer service that uses AI to help people identify and eliminate physical junk mail. Users classify their incoming mail through a smart camera app or by forwarding USPS Informed Delivery email digests. The service then automates opt-out requests on their behalf, progressively reducing the volume of junk mail they receive. Think of it as an **"unsubscribe button for physical mail."**
+SnailSense is a consumer service that uses AI to help people identify and eliminate physical junk mail. Users classify their incoming mail through a smart camera app or by forwarding USPS Informed Delivery email digests. The service then automates opt-out requests on their behalf, progressively reducing the volume of junk mail they receive. Think of it as an **"unsubscribe button for physical mail."**
 
 ---
 
@@ -28,7 +28,7 @@ A mobile-first service with two input channels and an automated opt-out engine:
 - User confirms or corrects classification, training the model over time
 
 ### Input Channel 2: Informed Delivery Digest (Passive)
-- One-time setup: user auto-forwards their daily USPS Informed Delivery email to a dedicated MailFilter address (e.g., `username@mailfilter.com`)
+- One-time setup: user auto-forwards their daily USPS Informed Delivery email to a dedicated SnailSense address (e.g., `username@snailsense.com`)
 - Service automatically parses grayscale mail images from the digest
 - User receives a pre-classified summary before mail even arrives physically
 - "Set it and forget it" experience

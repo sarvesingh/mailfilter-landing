@@ -1,4 +1,4 @@
-"""SQLAlchemy ORM models — all tables for MailFilter."""
+"""SQLAlchemy ORM models — all tables for SnailSense."""
 
 import uuid
 from datetime import date, datetime

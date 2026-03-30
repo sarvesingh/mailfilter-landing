@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.mailfilter.poc</string>
+    <string>com.snailsense.poc</string>
 
     <key>ProgramArguments</key>
     <array>

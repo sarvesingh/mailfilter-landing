@@ -9,7 +9,7 @@ from .gmail_reader import fetch_todays_mail
 from .classifier import classify_all
 from .sheets_logger import log_results
 
-logger = logging.getLogger("mailfilter")
+logger = logging.getLogger("snailsense")
 
 
 def setup_logging() -> None:
@@ -28,7 +28,7 @@ def setup_logging() -> None:
     sh.setFormatter(fmt)
     logger.addHandler(sh)
 
-    # Also capture sub-module loggers under "mailfilter"
+    # Also capture sub-module loggers under "snailsense"
     for name in ("src.gmail_reader", "src.classifier", "src.sheets_logger", "src.config"):
         sub = logging.getLogger(name)
         sub.setLevel(logging.DEBUG)

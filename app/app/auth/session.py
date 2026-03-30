@@ -9,7 +9,7 @@ from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-SESSION_COOKIE_NAME = "mailfilter_session"
+SESSION_COOKIE_NAME = "snailsense_session"
 SESSION_MAX_AGE_SECONDS = 30 * 24 * 60 * 60  # 30 days
 
 _serializer = URLSafeTimedSerializer(settings.SECRET_KEY)

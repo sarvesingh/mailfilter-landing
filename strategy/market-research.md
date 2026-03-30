@@ -1,11 +1,11 @@
-# MailFilter — Market Research (March 2026)
+# SnailSense — Market Research (March 2026)
 
 ## Direct Competitors
 
 | Player | Status | Model | Key Insight |
 |--------|--------|-------|-------------|
 | **PaperKarma** | Active, 10+ years | $3.99/mo, 100K+ mailers in DB | Market leader but mediocre reviews. Users resent paying; daily photo requirement causes churn |
-| **PostGhost** | Open beta Jan 2025 | AI snap-and-submit + data broker removal | Closest competitor to MailFilter. Claims 80% reduction in 8 weeks. 12-18 months ahead |
+| **PostGhost** | Open beta Jan 2025 | AI snap-and-submit + data broker removal | Closest competitor to SnailSense. Claims 80% reduction in 8 weeks. 12-18 months ahead |
 | **DMAchoice** | Active, industry-run | $6 one-time, 10-year opt-out | Only covers ANA members. Industry policing itself |
 | **CatalogChoice** | Active, nonprofit | Free, 2M+ users | Manual, narrow scope (catalogs only) |
 | **OptOutPrescreen** | Active | Free | Only prescreened credit/insurance offers |

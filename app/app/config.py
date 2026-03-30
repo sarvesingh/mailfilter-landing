@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    """All env vars for the MailFilter app."""
+    """All env vars for the SnailSense app."""
 
     # Database
     DATABASE_URL: str
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     # Email
     RESEND_API_KEY: str
-    RESEND_FROM_EMAIL: str = "mail@mailfilter.com"
+    RESEND_FROM_EMAIL: str = "hello@snailsense.com"
 
     # Task queue
     REDIS_URL: str = "redis://localhost:6379"

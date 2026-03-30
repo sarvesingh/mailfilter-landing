@@ -1,4 +1,4 @@
-# MailFilter — Phased Strategy
+# SnailSense — Phased Strategy
 
 ## Master Pitch
 
