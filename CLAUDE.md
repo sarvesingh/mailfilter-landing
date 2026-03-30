@@ -25,15 +25,60 @@ Claude is not just a pass-through — validate before delegating, review before 
 ## Strategy Documents
 
 - `strategy/phases.md` — Phased roadmap with customer profiles, pitches, tech stack, and key decisions
+- `strategy/phase1-implementation.md` — Detailed sprint plan, DB schema, API endpoints, background jobs
 - `strategy/market-research.md` — Competitive landscape, market data, viability assessment
 - `snailsense-business-plan.md` — Original business plan (Feb 2026)
 
+## Current Progress (as of March 29, 2026)
+
+**Sprint 0 (Scaffolding):** Done. FastAPI app, SQLAlchemy models, Alembic migration, project structure.
+**Sprint 1 (Auth):** Done. Google OAuth flow, session cookies, invite codes, login page.
+**Sprint 2 (Mail Fetch + Classification):** Next. Port POC pipeline to multi-user production code.
+
+Sprint 2 scope — create `app/app/mail/` module:
+- `gmail_reader.py` — port from `poc/src/gmail_reader.py`, use per-user Google credentials from `app/app/auth/google_tokens.py`
+- `classifier.py` — port from `poc/src/classifier.py`, minimal changes
+- `service.py` — orchestrator: fetch Informed Delivery → classify images → store MailPiece rows in Postgres → upload images to Supabase Storage → update DailyStat
+- `router.py` — `/api/mail/*` endpoints (today, history, detail, correction, fetch-now)
+- Background job: `workers/daily_fetch.py` using arq
+
+After Sprint 2, Sprints 3 (Dashboard), 4 (Stats), 5 (Opt-outs) can run in parallel.
+
 ## Project Overview
 
-SnailSense is a product that helps people stop physical junk mail. This repo contains two things:
+SnailSense is a product that helps people stop physical junk mail. This repo contains three things:
 
 1. **Landing page** (`index.html`) — a static single-page marketing site deployed to GitHub Pages via `.github/workflows/pages.yml` on push to `main`.
-2. **POC pipeline** (`poc/`) — a Python automation that reads USPS Informed Delivery emails, classifies mail images as junk/real using Claude's vision API, and logs results to Google Sheets.
+2. **Web app** (`app/`) — FastAPI backend with Google OAuth, PostgreSQL via Supabase, Claude AI classification. In active development (Phase 1 MVP).
+3. **POC pipeline** (`poc/`) — the original Python automation that reads USPS Informed Delivery emails, classifies mail images as junk/real using Claude's vision API, and logs results to Google Sheets. Being ported into the web app.
+
+## Web App (app/)
+
+### Setup
+
+```bash
+cd app
+uv sync                                    # install dependencies
+cp .env.example .env                       # fill in all required vars (see config.py)
+alembic upgrade head                       # run migrations
+uvicorn app.main:app --reload              # start dev server at localhost:8000
+```
+
+### Key Architecture
+
+- **Auth flow:** Google OAuth with `gmail.readonly` scope → encrypted token storage (Fernet) → signed session cookies (itsdangerous, 30-day expiry)
+- **Token management:** `app/auth/google_tokens.py` — encrypt/decrypt tokens, auto-refresh expired credentials, persist back to DB
+- **Dependencies:** `app/dependencies.py` — `get_current_user` (401 if unauthenticated), `get_current_user_optional` (returns None)
+- **Models:** `app/models.py` — User, InviteCode, MailPiece, OptOutRequest, SenderDirectory, DailyStat
+- **All blocking Google API calls** use `asyncio.run_in_executor` to avoid blocking the event loop
+
+### Porting from POC
+
+The POC `classifier.py` and `gmail_reader.py` are directly reusable. Key changes needed:
+- Replace single-user config with per-user Google credentials from the DB
+- Replace Google Sheets logging with Postgres (MailPiece model)
+- Add Supabase Storage for mail images
+- Make async (POC is synchronous)
 
 ## Landing Page
 
